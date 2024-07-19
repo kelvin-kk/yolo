@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  backend:
+    image: kelvin09/yolo-backend:1.0.0
+    container_name: yolo-ip2-backend
+    working_dir: /usr/src/app
+    networks:
+      - yolo-ip2-network
+    volumes:
+      - ./backend:/usr/src/app/backend
+      - /usr/src/app/node_modules
+    tty: true
+    ports:
+      - "5000:5000"
+    command: npm start
+
+  client:
+    image: kelvin09/yolo-client:1.0.0
+    container_name: yolo-ip2-frontend
+    working_dir: /usr/src/app
+    networks:
+      - yolo-ip2-network  
+    volumes:
+      - ./client:/usr/src/app/client
+      - /usr/src/app/node_modules
+    tty: true
+    ports:
+      - "3000:3000"
+    command: npm start
+
+networks:
+  yolo-ip2-network:
+    driver: bridge
