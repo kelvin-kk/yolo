@@ -28,7 +28,7 @@ COPY --from=builder /usr/src/app/package.json ./
 COPY --from=builder /usr/src/app/build ./build
 COPY --from=builder /usr/src/app/node_modules ./node_modules
 
-# Expose port 5000
+# Expose port 
 EXPOSE 3000
 
 # Command to run the Node.js application
