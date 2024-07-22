@@ -20,7 +20,7 @@ WORKDIR /usr/src/app
 
 COPY --from=builder /usr/src/app /usr/src/app
 
-# Expose port 5000
+# Expose port
 EXPOSE 5000
 
 # Command to run the Node.js application
