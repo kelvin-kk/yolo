@@ -13,7 +13,7 @@ COPY package.json package-lock.json ./
 # Install dependencies
 RUN npm install --production
 
-# Copy the rest of the application code
+# Copy the rest of the application 
 COPY . .
 
 RUN npm run build
