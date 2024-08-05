@@ -80,6 +80,17 @@ sudo docker build -t kelvin09/yolo-client:v1.0.0 . --push
 docker-compose up -d
 ```
 
+# Playbook.yaml Roles
+```
+  roles:
+    - test-connectivity (Ping the created vm)
+    - install-dependencies (Install the required dependencies to run the application)
+    - cloning-repository (Cloning the github repository)
+    - install-python3 (Install python required dependencies)
+    - backend-deployment (build and run backend from docker)
+    - frontend-deployment (build and run frontend from docker)
+```
+
 #   Images / Screenshots
 
 ### Docker Containers
