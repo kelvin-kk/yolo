@@ -1,5 +1,5 @@
 ---
-# tasks file for configure-python3
+# tasks file for install-python3
 
 - name: Install python3-pip
   apt:
