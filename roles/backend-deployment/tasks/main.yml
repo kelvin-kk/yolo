@@ -1,7 +1,7 @@
 ---
 # tasks file for backend-deployment
 
-  - name: Install backend repo
+  - name: Backend-Deployment
     docker_image:
       name: kelvin09/yolo-backend:v1.0.0
       source: pull

@@ -1,2 +1,18 @@
 ---
 # tasks file for frontend-deployment
+
+  - name: Frontend-Deployment
+    docker_image:
+      name: kelvin09/yolo-client:v1.0.0
+      source: pull
+
+  - name: Create Frontend Container
+    docker_container:
+      name: yolo-ip2-frontend
+      image: kelvin09/yolo-client:v1.0.0
+      networks:
+        - name: yolo-ip2-network
+      ports:
+       - "3000:3000"
+      command: "npm start"
+    become: yes
