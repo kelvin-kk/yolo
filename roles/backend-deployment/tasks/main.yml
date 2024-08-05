@@ -11,7 +11,7 @@
       name: yolo-ip2-backend
       image: kelvin09/yolo-backend:v1.0.0
       networks:
-        -name: yolo-ip2-network
+        - name: yolo-ip2-network
       ports:
        - "5000:5000"
       command: "npm start"
