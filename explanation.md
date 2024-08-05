@@ -91,6 +91,16 @@ docker-compose up -d
     - frontend-deployment (build and run frontend from docker)
 ```
 
+# ansible.cfg
+```
+[defaults]
+
+inventory = hosts
+remote_user = vagrant
+indentity_key_file = .vagrant/machines/default/virtualbox/private_key
+```
+
+
 #   Images / Screenshots
 
 ### Docker Containers
