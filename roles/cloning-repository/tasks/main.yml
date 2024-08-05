@@ -1,0 +1,8 @@
+---
+# tasks file for cloning-repository
+- name: Clone the app repository
+  ansible.builtin.git:
+    repo: 'https://github.com/kelvin-kk/yolo'
+    dest: "/home/vagrant/yolo"
+    version: moringa
+    update: yes

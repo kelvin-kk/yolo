@@ -8,7 +8,7 @@ services:
     networks:
       - yolo-ip2-network
     volumes:
-      - ./backend:/usr/src/app/backend
+      - ./backend:/usr/src/app/backend  
       - /usr/src/app/node_modules
     tty: true
     ports:

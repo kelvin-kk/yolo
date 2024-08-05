@@ -1,0 +1,11 @@
+---
+# tasks file for configure-properties
+
+- name: Update Server
+  apt:
+   update_cache: yes
+
+- name: Install Docker
+  pip:
+    name: docker
+    state: present

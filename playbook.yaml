@@ -2,3 +2,7 @@
   become: true
   roles:
     - test-connectivity
+    - install-dependencies
+    - cloning-repository
+    - install-python3
+    - backend-deployment

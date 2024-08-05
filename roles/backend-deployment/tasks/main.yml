@@ -1,0 +1,18 @@
+---
+# tasks file for backend-deployment
+
+  - name: Install backend repo
+    docker_image:
+      name: kelvin09/yolo-backend:v1.0.0
+      source: pull
+
+  - name: Create Backend Container
+    docker_container:
+      name: yolo-ip2-backend
+      image: kelvin09/yolo-backend:v1.0.0
+      networks:
+        -name: yolo-ip2-network
+      ports:
+       - "5000:5000"
+      command: "npm start"
+    become: yes
