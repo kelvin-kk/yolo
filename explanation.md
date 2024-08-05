@@ -100,6 +100,10 @@ remote_user = vagrant
 indentity_key_file = .vagrant/machines/default/virtualbox/private_key
 ```
 
+# hosts
+```
+ansible_hosts = 127.0.0.1 ansible_port = 2222
+```
 
 #   Images / Screenshots
 
