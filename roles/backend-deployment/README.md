@@ -1,6 +1,6 @@
 # YOLO IP4 ORCHESTRATION WITH KUBERNETES
 
-![image](/images/yolo_website.png)
+![image](/images/ip4_homepage.png)
 
 ## Requirements
 
@@ -56,3 +56,9 @@ kubectl apply -f backend-deployment.yaml
 kubectl apply -f client-deployment.yaml
 kubectl apply -f mongodb-deployment.yaml
 ```
+
+### Kubectl Pods
+![image](/images/kubectl_pods.png)
+
+### Kubectl Services
+![image](/images/kubectl_services.png)
