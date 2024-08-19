@@ -13,14 +13,14 @@ spec:
     spec:
       containers:
       - name: client
-        image: kelvin09/yolo-client:v1.0.0
+        image: kelvin09/yolo-client:v1.0.2
         resources:
           requests:
             memory: "128Mi"
-            cpu: "250m"
-          limits:
-            memory: "128Mi"
             cpu: "500m"
+          limits:
+            memory: "256Mi"
+            cpu: "1"
         ports:
         - containerPort: 3000
 

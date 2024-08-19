@@ -1,35 +1,23 @@
-ARG NODE_VERSION=19.0.0-alpine3.16
+FROM node:16-alpine AS builder
 
-FROM node:${NODE_VERSION} as builder
+WORKDIR /app
 
-# Set the working directory inside the container
-WORKDIR /usr/src/app
+COPY package*.json ./
 
-ENV NODE_OPTIONS=--openssl-legacy-provider
+RUN npm ci
 
-# Copy package.json and package-lock.json to the container
-COPY package.json package-lock.json ./
-
-# Install dependencies
-RUN npm install --production
-
-# Copy the rest of the application code
 COPY . .
 
 RUN npm run build
 
-FROM node:${NODE_VERSION} as runner
+FROM node:16-alpine
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-ENV NODE_OPTIONS=--openssl-legacy-provider
+RUN npm install -g serve
 
-COPY --from=builder /usr/src/app/package.json ./
-COPY --from=builder /usr/src/app/build ./build
-COPY --from=builder /usr/src/app/node_modules ./node_modules
+COPY --from=builder /app/build /app/build
 
-# Expose port 
 EXPOSE 3000
 
-# Command to run the Node.js application
-CMD ["npm", "start"]
+CMD ["serve","-s","build"]
