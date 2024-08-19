@@ -3,8 +3,9 @@
 ## Requirements
 
 + Ensure to have an active Google Cloud account with billing enabled
-+ Install Google Cloud SDK
 + Install Minikube and Kubectl
++ Create Kubectl cluster
++ Install Google Cloud SDK
 
 ### How to install Minikube and Kubectl
 
@@ -25,14 +26,29 @@ minikube start
 ```
 
 Confirm Minikube is running
-```
+```ctl --classic
+ ```
  minikube status
  ```
 
 #### Installing Kubectl
 ```
- sudo snap install kubectl --classic
- ```
+ sudo snap install kube
+ 
+
+  ### Setting up Google Cloud SDK
+
+
+
+ ### Setting up Google Cloud SDK
+```
+gcloud auth login
+```
+
+```
+gcloud config set project [PROJECT_ID]
+```
+
 
 ## Deploying the App
 
@@ -54,6 +70,8 @@ kubectl apply -f backend-deployment.yaml
 kubectl apply -f client-deployment.yaml
 kubectl apply -f mongodb-deployment.yaml
 ```
+
+
 
 ### Kubectl Pods
 ![image](/images/kubectl_pods.png)
