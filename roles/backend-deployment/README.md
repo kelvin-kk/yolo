@@ -1,7 +1,5 @@
 # YOLO IP4 ORCHESTRATION WITH KUBERNETES
 
-![image](/images/ip4_homepage.png)
-
 ## Requirements
 
 + Ensure to have an active Google Cloud account with billing enabled
@@ -62,3 +60,6 @@ kubectl apply -f mongodb-deployment.yaml
 
 ### Kubectl Services
 ![image](/images/kubectl_services.png)
+
+# YOLO IP4 WEBSITE
+![image](/images/ip4_homepage.png)
