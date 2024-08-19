@@ -26,19 +26,26 @@ minikube start
 ```
 
 Confirm Minikube is running
-```ctl --classic
- ```
+```
  minikube status
  ```
 
 #### Installing Kubectl
 ```
- sudo snap install kube
- 
+ sudo snap install kubectl --classic
+ ```
 
-  ### Setting up Google Cloud SDK
+### Create Kubectl cluster
 
+Create the cluster
+```
+gcloud container clusters create kel-cluster --zone us-central1-c --num-nodes=3 --machine-type=e2-standard-2
+```
 
+Update auth-plugin
+```
+gcloud components install gke-gcloud-auth-plugin
+```
 
  ### Setting up Google Cloud SDK
 ```
